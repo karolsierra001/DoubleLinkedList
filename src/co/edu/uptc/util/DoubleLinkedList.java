@@ -165,8 +165,16 @@ public class DoubleLinkedList<T> implements List<T>{
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addAll'");
+        boolean modified = false;
+        if ( c.isEmpty()) {
+            modified = false; 
+        }else{ 
+                for (T dataCollection : c) {
+                add(dataCollection); 
+                modified = true;
+            }
+            }
+        return modified; 
     }
 
     @Override
